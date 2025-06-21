@@ -49,7 +49,9 @@ const Navbar = () => {
             <ul className="menu menu-horizontal px-1">{links}</ul>
          </div>
          <div className="navbar-end gap-4">
-            <Link className="underline">Register</Link>
+            <Link to="/register" className="underline">
+               Register
+            </Link>
             <a className="btn">Sign In</a>
          </div>
       </div>
