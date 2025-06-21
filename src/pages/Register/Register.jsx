@@ -18,6 +18,7 @@ const Register = () => {
             text: '"Password must be at least 6 characters long and include at least one uppercase letter and one number."!',
          })
       }
+
       console.log(email, password)
    }
    return (
