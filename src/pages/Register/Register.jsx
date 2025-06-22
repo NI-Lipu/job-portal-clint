@@ -1,8 +1,12 @@
 import Lottie from 'lottie-react'
 import registerLottieAnimation from '../../assets/lottie/register.json'
 import Swal from 'sweetalert2'
+import { useContext } from 'react'
+import AuthContext from '../../context/AuthContext/AuthContext'
 
 const Register = () => {
+   const { registerUsers } = useContext(AuthContext)
+
    const handleRegister = (e) => {
       e.preventDefault()
       const form = e.target
@@ -17,8 +21,18 @@ const Register = () => {
             title: 'Oops...',
             text: '"Password must be at least 6 characters long and include at least one uppercase letter and one number."!',
          })
+         return
       }
 
+      registerUsers(email, password)
+         .then((result) => {
+            const user = result.user
+            console.log(user)
+         })
+         .catch((error) => {
+            const errorMessage = error.message
+            console.log(errorMessage)
+         })
       console.log(email, password)
    }
    return (
