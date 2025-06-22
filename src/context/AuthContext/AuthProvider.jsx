@@ -3,6 +3,7 @@ import AuthContext from './AuthContext'
 import {
    createUserWithEmailAndPassword,
    onAuthStateChanged,
+   signInWithEmailAndPassword,
 } from 'firebase/auth'
 import auth from '../../firebase/firebase.config/'
 
@@ -14,6 +15,12 @@ const AuthProvider = ({ children }) => {
    const registerUsers = (email, password) => {
       setLoading(true)
       return createUserWithEmailAndPassword(auth, email, password)
+   }
+
+   // signInUsers
+   const signInUsers = (email, password) => {
+      setLoading(true)
+      return signInWithEmailAndPassword(auth, email, password)
    }
 
    // Set Observer
@@ -28,7 +35,7 @@ const AuthProvider = ({ children }) => {
       }
    }, [])
 
-   const authInfo = { user, loading, registerUsers }
+   const authInfo = { user, loading, registerUsers, signInUsers }
    return (
       <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>
    )
