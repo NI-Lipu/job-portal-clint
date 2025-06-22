@@ -1,6 +1,7 @@
 import { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import AuthContext from '../../context/AuthContext/AuthContext'
+import logo from '../../assets/logo.png'
 
 const Navbar = () => {
    const { user, logOut } = useContext(AuthContext)
@@ -33,7 +34,7 @@ const Navbar = () => {
                <div
                   tabIndex={0}
                   role="button"
-                  className="btn btn-ghost lg:hidden"
+                  className="btn btn-ghost md:hidden"
                >
                   <svg
                      xmlns="http://www.w3.org/2000/svg"
@@ -50,6 +51,7 @@ const Navbar = () => {
                      />
                   </svg>
                </div>
+               <img className="hidden md:block w-14" src={logo} alt="" />
                <ul
                   tabIndex={0}
                   className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
@@ -58,10 +60,10 @@ const Navbar = () => {
                </ul>
             </div>
             <Link to="/" className="btn btn-ghost text-xl">
-               daisyUI
+               Job Portal
             </Link>
          </div>
-         <div className="navbar-center hidden lg:flex">
+         <div className="navbar-center hidden md:flex">
             <ul className="menu menu-horizontal px-1">{links}</ul>
          </div>
          <div className="navbar-end gap-4">
