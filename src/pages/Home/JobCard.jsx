@@ -17,7 +17,7 @@ const JobCard = ({ job }) => {
       title,
       _id,
    } = job
-   console.log(job)
+
    return (
       <div className="flex p-5 items-start gap-3 border rounded-md">
          <div>
@@ -37,8 +37,8 @@ const JobCard = ({ job }) => {
             <div className="flex flex-wrap gap-3 items-center">
                <GiSkills size={20} color="#3498db" />
                <span className="font-medium">Requirements:</span>
-               {requirements.map((skill) => (
-                  <p>{skill},</p>
+               {requirements.map((skill, idx) => (
+                  <p key={idx}>{skill},</p>
                ))}
             </div>
             <div className="flex items-center gap-1">

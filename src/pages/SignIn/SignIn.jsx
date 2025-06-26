@@ -3,10 +3,13 @@ import registerLottieAnimation from '../../assets/lottie/register.json'
 import { useContext } from 'react'
 import AuthContext from '../../context/AuthContext/AuthContext'
 import GoogleLogIn from '../shared/GoogleLogIn'
-import { Link } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 
 const SignIn = () => {
    const { signInUsers } = useContext(AuthContext)
+   const { state } = useLocation()
+   const navigate = useNavigate()
+   // console.log(state)
    const handleSignIn = (e) => {
       e.preventDefault()
       const form = e.target
@@ -16,6 +19,9 @@ const SignIn = () => {
       signInUsers(email, password)
          .then((result) => {
             const user = result.user
+            if (state) {
+               navigate(`${state}`)
+            }
             console.log(user)
          })
          .catch((error) => {
@@ -60,7 +66,7 @@ const SignIn = () => {
                   <div className="form-control mt-6">
                      <button className="btn bg-sky-300 w-full">Sign In</button>
                   </div>
-                  <GoogleLogIn></GoogleLogIn>
+                  <GoogleLogIn state={state}></GoogleLogIn>
                </form>
                <div className="text-center mb-5">
                   <p>
