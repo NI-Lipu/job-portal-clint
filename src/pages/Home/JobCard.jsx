@@ -23,7 +23,7 @@ const JobCard = ({ job }) => {
          </div>
          <div className="flex flex-col gap-2">
             <div className="flex items-center gap-4">
-               <h3>{company}</h3>
+               <h3 className="font-bold text-lg">{company}</h3>
                <p className="flex items-center gap-1">
                   <IoLocationOutline />
                   {location}

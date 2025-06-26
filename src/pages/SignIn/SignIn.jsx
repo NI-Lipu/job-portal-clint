@@ -2,6 +2,8 @@ import Lottie from 'lottie-react'
 import registerLottieAnimation from '../../assets/lottie/register.json'
 import { useContext } from 'react'
 import AuthContext from '../../context/AuthContext/AuthContext'
+import GoogleLogIn from '../shared/GoogleLogIn'
+import { Link } from 'react-router-dom'
 
 const SignIn = () => {
    const { signInUsers } = useContext(AuthContext)
@@ -56,9 +58,21 @@ const SignIn = () => {
                      />
                   </div>
                   <div className="form-control mt-6">
-                     <button className="btn btn-primary">Sign In</button>
+                     <button className="btn bg-sky-300 w-full">Sign In</button>
                   </div>
+                  <GoogleLogIn></GoogleLogIn>
                </form>
+               <div className="text-center mb-5">
+                  <p>
+                     Don't you have an account?{' '}
+                     <Link
+                        className="text-lg underline font-medium text-sky-600"
+                        to={'/register'}
+                     >
+                        Register
+                     </Link>
+                  </p>
+               </div>
             </div>
          </div>
       </div>

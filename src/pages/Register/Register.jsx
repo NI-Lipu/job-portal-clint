@@ -3,6 +3,8 @@ import registerLottieAnimation from '../../assets/lottie/register.json'
 import Swal from 'sweetalert2'
 import { useContext } from 'react'
 import AuthContext from '../../context/AuthContext/AuthContext'
+import GoogleLogIn from '../shared/GoogleLogIn'
+import { Link } from 'react-router-dom'
 
 const Register = () => {
    const { registerUsers } = useContext(AuthContext)
@@ -69,9 +71,21 @@ const Register = () => {
                      />
                   </div>
                   <div className="form-control mt-6">
-                     <button className="btn btn-primary">Register</button>
+                     <button className="btn bg-sky-300 w-full">Register</button>
                   </div>
+                  <GoogleLogIn></GoogleLogIn>
                </form>
+               <div className="text-center mb-5">
+                  <p>
+                     Already have an account?{' '}
+                     <Link
+                        className="text-lg underline font-medium text-sky-600"
+                        to={'/signIn'}
+                     >
+                        Login
+                     </Link>
+                  </p>
+               </div>
             </div>
          </div>
       </div>
