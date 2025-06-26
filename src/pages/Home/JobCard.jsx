@@ -1,6 +1,7 @@
 import { GiSkills } from 'react-icons/gi'
 import { IoLocationOutline } from 'react-icons/io5'
 import salary from '../../assets/icon/salary.png'
+import { Link } from 'react-router-dom'
 
 const JobCard = ({ job }) => {
    const {
@@ -14,6 +15,7 @@ const JobCard = ({ job }) => {
       requirements,
       salaryRange,
       title,
+      _id,
    } = job
    console.log(job)
    return (
@@ -49,9 +51,11 @@ const JobCard = ({ job }) => {
                <p className="bg-sky-200 rounded-2xl font-medium px-3">
                   {jobType}
                </p>
-               <button className="bg-green-300 font-medium rounded-2xl px-3">
-                  Apply
-               </button>
+               <Link to={`/jobs/${_id}`}>
+                  <button className="bg-green-300 font-medium rounded-2xl px-3">
+                     Apply
+                  </button>
+               </Link>
             </div>
          </div>
       </div>
