@@ -21,6 +21,8 @@ const SignIn = () => {
             const user = result.user
             if (state) {
                navigate(`${state}`)
+            } else {
+               navigate('/')
             }
             console.log(user)
          })

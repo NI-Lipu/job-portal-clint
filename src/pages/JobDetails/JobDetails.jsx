@@ -71,7 +71,7 @@ const JobDetails = () => {
                   </span>
                </p>
                <div className="flex justify-center md:justify-start gap-5">
-                  <Link>
+                  <Link to={`/jobApply/${_id}`}>
                      <button className="bg-green-300 font-medium rounded-xl py-3 px-4">
                         Apply Now
                      </button>
