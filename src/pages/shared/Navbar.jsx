@@ -1,5 +1,5 @@
 import { useContext } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 import AuthContext from '../../context/AuthContext/AuthContext'
 import logo from '../../assets/logo.png'
 
@@ -20,10 +20,10 @@ const Navbar = () => {
       <>
          {' '}
          <li>
-            <a>Item 1</a>
+            <NavLink to={'/'}>Home</NavLink>
          </li>
          <li>
-            <a>Item 3</a>
+            <NavLink to={'/myApplications'}>My-Applications</NavLink>
          </li>
       </>
    )
